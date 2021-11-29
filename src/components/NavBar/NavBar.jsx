@@ -1,8 +1,9 @@
 import React from "react"
 import './NavBar.scss'
 import heart from '../../assets/nav/heart.svg';
-import cart from '../../assets/nav/cart.svg';
+
 import userImg from '../../assets/nav/user.png';
+import CartWidget from "../CartWidget/CartWidget";
 
 export default function NavBar() {
 
@@ -19,7 +20,7 @@ export default function NavBar() {
 
             <div className="container-navbuttons">
                 <img src={heart} alt="heart" />
-                <img src={cart} alt="cart" />
+                <CartWidget />
                 <img src={userImg} alt="user" />
             </div>
         </nav>
