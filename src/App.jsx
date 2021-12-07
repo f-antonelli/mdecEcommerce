@@ -1,12 +1,15 @@
 import './App.scss';
+import Feature from './components/Feature/Feature';
+import Header from './components/Header/Header';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import NavBar from './components/NavBar/NavBar'
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
+      <Header />
+      <Feature />
       <ItemListContainer />
+      
     </div>
   );
 }

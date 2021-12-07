@@ -1,11 +1,11 @@
-import ItemCount from "../ItemCount/ItemCount"
+import ItemList from "../ItemList/ItemList"
 import "./ItemListContainer.scss"
 
 export default function ItemListContainer() {
    return (
       <>
-         <h3 className="list">Listado de productos</h3>
-         <ItemCount stock={5} />
+         <h3 className="list">Our Products</h3>
+         <ItemList />
       </>
    )
 }

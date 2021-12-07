@@ -1,0 +1,27 @@
+.container-feature {
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   flex-wrap: wrap;
+   padding: 30px 0;
+   .feature-item{
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      min-width: 285px;
+      .img{
+         margin-right: 20px;
+      }
+      .content{
+         h5{
+            font-size: 16px;
+            font-weight: 500;
+         }
+         p{
+            font-size: 14px;
+            font-weight: 300;
+            color: #898989;
+         }
+      }
+   }
+}

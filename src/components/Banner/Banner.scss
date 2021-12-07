@@ -1,0 +1,14 @@
+.container-gridbanner{
+   display: grid;
+   grid-template-columns: .6fr 1fr .2fr;
+   grid-template-rows: minmax(533px, 533px);
+   grid-column-gap: 29px;
+   .grid-item{
+      img {
+         width: 100%;
+         height: 100%;
+         display: block;
+         object-fit: cover;
+       }
+   }
+}
