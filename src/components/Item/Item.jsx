@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom';
 import './Item.scss'
 
 const Item = ({ data }) => {
 
-   const { name, description, price, stock, image } = data;
+   const { id, name, description, price, stock, image } = data;
 
    return (
       <div className="container-card">
@@ -12,6 +13,13 @@ const Item = ({ data }) => {
             <p className="description">{description}</p>
             <p className="price">$ {price}</p>
             <span>Stock: {stock}</span>
+         </div>
+         <div className="hover-card">
+            <Link to={`/products/${id}`} className="details-card">View Details</Link>
+            <div className="reactions">
+               <p>Share</p>
+               <p>Like</p>
+            </div>
          </div>
       </div>
    )

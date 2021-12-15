@@ -4,14 +4,12 @@ $main-bgcolor: #F9F1E7;
 $main-bgcolor2: #FCF8F3;
 
 .container-header{
-   position: relative;
-   .bg-color{
-      z-index: -1;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 63vh;
-      background: linear-gradient(to right, $main-bgcolor 70%, $main-bgcolor2 0%);
-   }
+   padding-top: 8.5rem;
+   height: 63vh;
+   z-index: -1;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   background: linear-gradient(to right, $main-bgcolor 70%, $main-bgcolor2 0%);
 }

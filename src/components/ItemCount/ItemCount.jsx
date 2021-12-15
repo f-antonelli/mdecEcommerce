@@ -20,15 +20,10 @@ export default function ItemCount({ stock }) {
 
    return (
       <>
-         <div className="container-item">
-            <h3>Nombre del producto</h3>
-            <div className="container-count">
-               <button  className="button" onClick={remove}>-</button>
-               <p>{itemCant}</p>
-               <button disabled={disable} className="button" onClick={add}>+</button>
-            </div>
-            <button className="button-submit">Agregar al carrito</button>
-            <p className="stock">Max stock : {stock}</p>
+         <div className="product__info__count">
+            <button  className="button" onClick={remove}>-</button>
+            <p>{itemCant}</p>
+            <button disabled={disable} className="button" onClick={add}>+</button>
          </div>
       </>
    )
