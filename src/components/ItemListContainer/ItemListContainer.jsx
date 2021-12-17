@@ -3,11 +3,13 @@ import ItemList from "../ItemList/ItemList"
 import CircularProgress from '@mui/material/CircularProgress';
 import "./ItemListContainer.scss"
 import data from "../../data.json"
+import { useParams } from "react-router-dom";
 
 export default function ItemListContainer() {
 
    const [loader, setLoader] = useState(true)
    const [products, setProducts] = useState([])
+   const { id } = useParams();
 
    const getProducts = new Promise((resolve, reject) => {
       setTimeout(() => {

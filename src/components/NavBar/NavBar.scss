@@ -18,14 +18,40 @@
             }
         }
         ul{
+            cursor: pointer;
             display: flex;
             font-size: 16px;
             font-weight: 300;
             list-style: none;
             li{
+                display: flex;
+                align-items: center;
+                position: relative;
                 a{
                     text-decoration: none;
                     color: black;
+                }
+                img{
+
+                    height: .5rem;
+                }
+                ul.modal-active{
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    li{
+                        margin: 0;
+                        padding: .5rem 0;
+                    }
+                }
+                .products {
+                    width: 6rem;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    .active{
+                            transform: rotate(180deg);
+                    }
                 }
             }
             li:nth-child(2){

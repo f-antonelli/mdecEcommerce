@@ -15,7 +15,7 @@ const Item = ({ data }) => {
             <span>Stock: {stock}</span>
          </div>
          <div className="hover-card">
-            <Link to={`/products/${id}`} className="details-card">View Details</Link>
+            <Link to={`/item/${id}`} className="details-card">View Details</Link>
             <div className="reactions">
                <p>Share</p>
                <p>Like</p>
