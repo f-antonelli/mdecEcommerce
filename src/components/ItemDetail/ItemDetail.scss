@@ -57,10 +57,9 @@
             &:hover, &:focus{
                opacity: .6;
             }
-            button{
+            a{
                display: flex;
-               outline: none;
-               border: none;
+               text-decoration: none;
                background: none;
                color: white;
                img{

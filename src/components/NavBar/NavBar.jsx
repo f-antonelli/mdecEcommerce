@@ -1,3 +1,4 @@
+import { ArrowDropDown } from "@mui/icons-material";
 import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import heart from '../../assets/nav/heart.svg';
@@ -11,13 +12,6 @@ export default function NavBar() {
 
     const [isOpenModalNav, openModalNav, closeModalNav] = useModal(false);
 
-    const handleArrowClick = () => {
-        setArrow(arrow === true ? false : true);
-    }
-    
-    const [arrow, setArrow] = useState(false);
-
-    
     return(
         <nav className="container-nav">
             <div className="container-menu">
@@ -25,15 +19,15 @@ export default function NavBar() {
                 <ul>
                     <li >
                         {/* <Link to='/products'>Products</Link> */}
-                        <div className="products" onClick={() => {openModalNav(); handleArrowClick();}}>
+                        <div className="products" onClick={() => {openModalNav()}}>
                             <p>Products</p>
-                            <img className={`${arrow && 'active'}`} src="../../assets/nav/icon-arrow-dark.svg" alt="arrow" /> 
+                            <ArrowDropDown />
                         </div>
                         <Modal isOpen={isOpenModalNav} closeModal={closeModalNav}>
                             <ul className="modal-active">
-                                <li><Link to={'/category/1'}>Chairs</Link></li>
-                                <li><Link to={'/category/2'}>Bed</Link></li>
-                                <li><Link to={'/category/3'}>Decoration</Link></li>
+                                <li onClick={() => {closeModalNav()}}><Link to={'/category/1'}>Chairs</Link></li>
+                                <li onClick={() => {closeModalNav()}}><Link to={'/category/2'}>Bed</Link></li>
+                                <li onClick={() => {closeModalNav()}}><Link to={'/category/3'}>Decoration</Link></li>
                             </ul>
                         </Modal>
                     </li>

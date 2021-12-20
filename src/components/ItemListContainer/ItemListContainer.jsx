@@ -16,14 +16,20 @@ export default function ItemListContainer() {
          resolve(data)
       }, 2000)
    });
-
+   
    useEffect(() => {
+      setLoader(true)
       getProducts.then((data) => {
-         setProducts(data)
+         if (id !== undefined){
+            setProducts(data.filter (product => product.category === Number(id)));
+         } else {
+            setProducts(data)
+         }
          setLoader(false)
       })
-   }, []);
-
+   }, [id]);
+   
+   console.log(id)
    return (
       <>
          <h3 className="list">Our Products</h3>
