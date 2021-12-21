@@ -6,6 +6,7 @@
    width: 100vw;
    height: 100vh;
    display: none;
+
 }
 
 .modal.is-open{
@@ -13,8 +14,7 @@
    .modal-container{
       position: absolute;
       top: 4.5rem;
-      left: 14.9rem;
-      padding: 1rem;
+      left: 14.8rem;
       background-color: #fff;
    }
 }

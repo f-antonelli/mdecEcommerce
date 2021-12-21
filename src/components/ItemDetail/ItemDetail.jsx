@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
 import { useState } from 'react';
+import { Toaster, toast} from 'react-hot-toast'
+
 const ItemDetail = ({ data }) => {
   
   const [currentStock, setCurrentStock] = useState(0);
@@ -24,15 +26,22 @@ const ItemDetail = ({ data }) => {
         <div className="product__info__buttons">
             <ItemCount stock={data.stock} stockValue={stockValue} />
             <div className="product__info_addcart">
-               <Link to='/cart'>
+               <button onClick={() => toast.success(`${currentStock} ${data.name} fueron agregados al carrito`)}>
                 <img src="../../assets/nav/cart.svg" alt="addcart" />
                 <p>Add to cart</p>
-               </Link>
+               </button>
             </div>
         </div>
         <p className="product__info--description">Stock disponible: {data.stock - currentStock}</p>
       </div>
+      <Toaster
+        position="bottom-right"
+        reverseOrder={false}
+      />
+      <Link to='/products'>Ver mas productos</Link>
+      <Link to='/cart' className="product--cart">Ir al carrito</Link>
     </div>
+
    )
 }
 
