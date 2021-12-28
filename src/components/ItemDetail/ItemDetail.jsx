@@ -1,14 +1,30 @@
 import { Link } from "react-router-dom"
 import ItemCount from "../ItemCount/ItemCount"
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Toaster, toast} from 'react-hot-toast'
+import CartContext from "../../context/CartContext";
 
 const ItemDetail = ({ data }) => {
   
   const [currentStock, setCurrentStock] = useState(0);
+  const { addProducts } = useContext(CartContext);
+  const [cartItem] = useState(
+    {
+      id: data.id,
+      name: data.name,
+      price: data.price,
+      img: data.image,
+      quantity: 0
+    }
+  )
 
   const stockValue = (value) => {
     setCurrentStock(value);
+    cartItem.quantity = value;
+  }
+
+  const sendItem = () => {
+    addProducts(cartItem)
   }
 
    return (
@@ -24,9 +40,10 @@ const ItemDetail = ({ data }) => {
         <p className="product__info--description">{data.description}</p>
         <h4 className="product__info__boxprice--price">${data.price}</h4>
         <div className="product__info__buttons">
-            <ItemCount stock={data.stock} stockValue={stockValue} />
+            <ItemCount stock={data.stock} stockValue={stockValue} onAdd={(value) => {cartItem.quantity = value;}}/>
             <div className="product__info_addcart">
-               <button onClick={() => toast.success(`${currentStock} ${data.name} fueron agregados al carrito`)}>
+               <button 
+                onClick={() => {toast.success(`${currentStock} ${data.name} fueron agregados al carrito`); sendItem()}}>
                 <img src="../../assets/nav/cart.svg" alt="addcart" />
                 <p>Add to cart</p>
                </button>

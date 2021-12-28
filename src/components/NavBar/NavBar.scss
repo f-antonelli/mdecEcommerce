@@ -72,4 +72,108 @@
             padding: 0 32px;
         }
     }
+
+    .container-menu-mobile{
+        display: none;
+    }
+}
+
+@media (max-width: 700px) {
+    .container-nav{
+        padding: 1rem 2rem !important;
+        .container-menu{
+            display: none;
+        }
+        .container-navbuttons{
+            display: none;
+        }
+        .container-menu-mobile{
+            z-index: 99999;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100vw;
+            h3{
+                font-size: 30px;
+                font-weight: 700;
+                margin-right: 40px;
+                a{
+                    text-decoration: none;
+                    color: black;
+                }
+            }
+            .hamburger{
+                cursor: pointer;
+                font-size: 2.5rem;
+            }
+            .menu-mobile{
+                position: fixed;
+                top: 0;
+                right: -100vw;
+                width: 100%;
+                height: 100%;
+                background-color: white;
+                display: flex;
+                justify-content: center;
+                transition: all 1s;
+                .btn-close{
+                    cursor: pointer;
+                    position: absolute;
+                    top: 1rem;
+                    right: 1rem;
+                    font-size: 2.5rem;
+                }
+                ul{
+                    cursor: pointer;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 2rem;
+                    list-style: none;
+                    li{
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        position: relative;
+                        width: 100%;
+                        height: auto;
+                        padding: .5rem 0;
+                        a{
+                            text-decoration: none;
+                            color: black;
+                        }
+                        img{
+        
+                            height: .5rem;
+                        }
+                        .modal-navmobile{
+                            cursor: pointer;
+                            display: none;
+                            flex-direction: column;
+                            padding: .5rem 1.3rem;
+                            li{
+                                font-size: 1.5rem;
+                                margin: 0;
+                                padding: .5rem 0;
+                                &:hover{
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                        .modal-navmobile.active{
+                            display: flex;
+                        }
+                    }
+                    .products{
+                        display: flex;
+                        align-items: center;
+                    }
+                }
+            }
+            .menu-mobile.active{
+                right: 0;
+            }
+        }
+    }
 }

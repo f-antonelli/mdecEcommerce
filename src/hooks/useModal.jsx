@@ -6,7 +6,7 @@ const useModal = (initialValue = false) => {
    const [isOpen, setIsOpen] = useState(initialValue);
 
    const openModal = () => {
-      setIsOpen(true);
+      setIsOpen(!isOpen);
    }
    const closeModal = () => setIsOpen(false);
 

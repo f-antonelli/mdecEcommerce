@@ -1,11 +1,11 @@
-import Banner from '../Banner/Banner'
+import Slider from '../Slider/Slider'
 import HeroContent from '../HeroContent/HeroContent'
 import './Header.scss'
 
 const Header = () => {
    return (
       <div className="container-header">
-         <Banner />
+         <Slider />
          <HeroContent />
       </div>
    )
