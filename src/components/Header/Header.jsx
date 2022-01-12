@@ -4,10 +4,13 @@ import './Header.scss'
 
 const Header = () => {
    return (
-      <div className="container-header">
-         <Slider />
-         <HeroContent />
-      </div>
+      <>
+         <div className="bg-container"></div>
+         <div className="container-header">
+            <Slider />
+            <HeroContent />
+         </div>
+      </>
    )
 }
 

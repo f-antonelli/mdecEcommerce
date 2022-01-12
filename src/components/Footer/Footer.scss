@@ -50,9 +50,32 @@
       }
    }
    .first{
-      flex: .8;
+      flex: 1;
    }
    .last{
       padding: 0;
+   }
+}
+   
+@media (max-width: 1355px){
+   .footer{
+      .third{
+         display: none;
+      }
+   }
+}
+
+@media (max-width: 1160px){
+   .footer{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      .first{
+         align-items: center !important;
+      }
+      .second{
+         display: none;
+      }
    }
 }

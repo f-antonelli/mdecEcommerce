@@ -1,12 +1,14 @@
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import cart from '../../assets/nav/cart.svg';
 import CartContext from '../../context/CartContext';
 import useModal from '../../hooks/useModal';
 import './CartWidget.scss';
+import RemoveIcon from '@mui/icons-material/Remove';
+import { Delete } from '@mui/icons-material';
 
 export default function CartWidget() {
    const [isOpenModalNav, openModalNav, closeModalNav] = useModal(false);
-   const {products} = useContext(CartContext)
+   const {products, removeCart, removeAllCart} = useContext(CartContext)
 
    const closeOutside = (e) => {
       if (e.target.className === 'container-cart active')
@@ -15,9 +17,12 @@ export default function CartWidget() {
 
    return (
       <>
+         {console.log(products)}
          <img src={cart} alt="cart" onClick={() => openModalNav()} />
          <div className={`container-cart ${isOpenModalNav && 'active'}`} onClick={closeOutside}>
             <div className={`cart ${isOpenModalNav && 'active'}`}>
+               <h2>Cart</h2>
+               <hr />
                {
                   products.map((product) => {
                      return (
@@ -26,9 +31,13 @@ export default function CartWidget() {
                            <h3>{product.name}</h3>
                            <p>{product.quantity}</p>
                            <p>{product.price}</p>
+                           <RemoveIcon className='itemRemove' onClick={() => removeCart(product)}/>
                         </div>
                      )
                   })
+               }
+               {
+                  products.length !== 0 && <div className='trash' onClick={() => removeAllCart()}><Delete /></div>
                }
             </div>
          </div>

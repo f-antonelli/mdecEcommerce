@@ -17,7 +17,7 @@ const Footer = () => {
             </div>
          </div>
          
-         <div className="footer__box">
+         <div className="footer__box second">
             <h4>Menu</h4>
             <Link to='/products'>Products</Link>
             <Link to='/rooms'>Rooms</Link>
@@ -26,7 +26,7 @@ const Footer = () => {
             <Link to='/terms'>Terms & Policy</Link>
          </div>
 
-         <div className="footer__box">
+         <div className="footer__box third">
             <h4>Account</h4>
             <p>My Account</p>
             <p>Checkout</p>
@@ -34,7 +34,7 @@ const Footer = () => {
             <p>My catalog</p>
          </div>
 
-         <div className="footer__box">
+         <div className="footer__box fourth">
             <h4>Stay Connected</h4>
             <p>Facebook</p>
             <p>Instagram</p>

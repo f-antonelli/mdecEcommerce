@@ -3,9 +3,8 @@
 $main-bgcolor: #F9F1E7;
 $main-bgcolor2: #FCF8F3;
 
-.container-header{
-   padding-top: 8.5rem;
-   height: 63vh;
+.bg-container{
+   height: 70vh;
    z-index: -1;
    position: absolute;
    top: 0;
@@ -13,3 +12,8 @@ $main-bgcolor2: #FCF8F3;
    width: 100vw;
    background: linear-gradient(to right, $main-bgcolor 70%, $main-bgcolor2 0%);
 }
+.container-header{
+   padding-top: 1rem;
+   width: 100vw;
+}
+

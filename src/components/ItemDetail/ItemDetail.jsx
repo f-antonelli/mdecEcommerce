@@ -14,6 +14,7 @@ const ItemDetail = ({ data }) => {
       name: data.name,
       price: data.price,
       img: data.image,
+      description: data.description,
       quantity: 0
     }
   )

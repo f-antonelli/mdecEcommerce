@@ -2,8 +2,10 @@ import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
 import CircularProgress from '@mui/material/CircularProgress';
 import "./ItemListContainer.scss"
-import data from "../../data.json"
 import { useParams } from "react-router-dom";
+import db from '../../firebase'
+import { collection, getDocs } from "firebase/firestore";
+
 
 export default function ItemListContainer() {
 
@@ -11,15 +13,20 @@ export default function ItemListContainer() {
    const [products, setProducts] = useState([])
    const { id } = useParams();
 
-   const getProducts = new Promise((resolve, reject) => {
-      setTimeout(() => {
-         resolve(data)
-      }, 2000)
-   });
+   async function getProducts(db) {
+      const productsCol = collection(db, 'products');
+      const productSnapshot = await getDocs(productsCol);
+      const productList = productSnapshot.docs.map(doc => {
+         let product = doc.data();
+         product.id = doc.id;
+         return product;
+      });
+      return productList;
+   }
    
    useEffect(() => {
       setLoader(true)
-      getProducts.then((data) => {
+      getProducts(db).then((data) => {
          if (id !== undefined){
             setProducts(data.filter (product => product.category === Number(id)));
          } else {

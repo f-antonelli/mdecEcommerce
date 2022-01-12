@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react"
 import ItemDetail from "../ItemDetail/ItemDetail"
-import data from "../../data.json"
 import CircularProgress from '@mui/material/CircularProgress';
 import { useParams } from "react-router-dom"
 import './ItemDetailContainer.scss'
+import { doc, getDoc } from "firebase/firestore";
+import db from '../../firebase'
 
 const ItemDetailContainer = () => {
 
@@ -11,17 +12,23 @@ const ItemDetailContainer = () => {
    const [loader, setLoader] = useState(true);
    const { id } = useParams();
 
-   const getProducts = new Promise((resolve, reject) => {
-      setTimeout(() => {
-         resolve(data);
-      }, 2000)
-   });
+   async function getProducts(db) {
+      const docRef = doc(db, 'products', id)
+      const docSnap = await getDoc(docRef);
+      
+      if (docSnap.exists()) {
+         console.log('Document data:', docSnap.data());
+         let product = docSnap.data();
+         product.id = docSnap.id;
+         setProduct(product);
+         setLoader(false);
+      } else {
+         console.log('No such document!');
+      }
+   }
 
    useEffect(() => {
-      getProducts.then( data => {
-         setProduct(data.find (product => product.id === Number(id)));
-         setLoader(false);
-      })
+     getProducts(db);
    }, [id]);
 
    return (

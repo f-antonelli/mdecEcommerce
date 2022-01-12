@@ -19,9 +19,25 @@ const CartProvider = ({ children }) => {
          : setProducts([...products, product])
    };
 
+   
+   const removeCart = (product) => {
+      setProducts(products.filter(item => item.name !== product.name))
+   }
+
+   const removeAllCart = () => {
+      setProducts([]);
+   }
+   
+   const totalToPay = products.reduce((acc, curr) => {
+      return acc + curr.quantity * curr.price;
+   },0);
+
    const data = {
       products,
-      addProducts
+      addProducts,
+      removeCart,
+      removeAllCart,
+      totalToPay
    };
 
    return (
