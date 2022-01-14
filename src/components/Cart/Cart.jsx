@@ -4,7 +4,6 @@ import RemoveIcon from '@mui/icons-material/Remove';
 import './Cart.scss'
 import { Button } from "@mui/material";
 import ModalCart from "../ModalCart/ModalCart";
-import useModal from "../../hooks/useModal";
 
 const Cart = () => {
    const { products, removeCart, totalToPay } = useContext(CartContext);
@@ -28,7 +27,6 @@ const Cart = () => {
                <div className="container-items">
                   {
                      products.map((product) => {
-                        console.log(product)
                         return (
                            <div className="container-item">
                               <div className="box-img">
@@ -61,7 +59,8 @@ const Cart = () => {
          <ModalCart 
             open={open} 
             handleClose={handleClose} 
-            products={products} 
+            products={products}
+            totalToPay={totalToPay} 
          />
       </>
    )
