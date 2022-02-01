@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
 import ItemList from "../ItemList/ItemList"
+// STYLES
 import CircularProgress from '@mui/material/CircularProgress';
 import "./ItemListContainer.scss"
+// ROUTER
 import { useParams } from "react-router-dom";
+// FIREBASE
 import db from '../../firebase'
 import { collection, getDocs } from "firebase/firestore";
 

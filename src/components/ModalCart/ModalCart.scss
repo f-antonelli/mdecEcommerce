@@ -1,0 +1,24 @@
+.container-modalcart{
+   .title{
+      text-align: center;
+      border-bottom: 1px solid black;
+      margin: 0 1.5rem;
+   }
+   .dialogcontent{
+      width: 600px;
+      .container-form{
+         display: flex;
+         flex-direction: column;
+         .input-textfield{
+            margin: 1rem 0;
+         }
+         .button-modal{
+            background: #e89f71;
+            color: white;
+            &:hover {
+              background: #8f6247;
+            }
+         }
+      }
+   }
+}

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import './HeroContent.scss'
 
 const HeroContent = () => {
@@ -6,7 +7,7 @@ const HeroContent = () => {
          <div className="herocontent">
             <h2>High-Quality Furniture Just For You</h2>
             <p>Our furniture is made from selected and best quality materials that are suitable for your dream home</p>
-            <button>Shop Now</button>
+            <Link to='/products'>Shop Now</Link>
          </div>
       </div>
    )

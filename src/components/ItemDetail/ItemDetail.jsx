@@ -3,6 +3,7 @@ import ItemCount from "../ItemCount/ItemCount"
 import { useContext, useState } from 'react';
 import { Toaster, toast} from 'react-hot-toast'
 import CartContext from "../../context/CartContext";
+import './ItemDetail.scss'
 
 const ItemDetail = ({ data }) => {
   
@@ -31,9 +32,7 @@ const ItemDetail = ({ data }) => {
    return (
       <div className="product">
       <div className="product__img">
-        <div className="product__img--mainimg">
           <img src={`../../assets/imgproducts/${data.image}`} alt={`mainimg${data.id}`} />
-        </div>
       </div>
 
       <div className="product__info">
