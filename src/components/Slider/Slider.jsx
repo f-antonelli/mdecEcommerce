@@ -1,9 +1,3 @@
-import { useState } from "react"
-
-import img1 from '../../assets/banner/banner1.png'
-import img2 from '../../assets/banner/banner2.png'
-import img3 from '../../assets/banner/banner3.png'
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import "swiper/swiper-bundle.min.css";
@@ -18,7 +12,7 @@ const Slider = () => {
    for (let i = 1; i < 4; i++) {
       slides.push(
          <SwiperSlide key={`slide-${i}`} tag="li">
-            <img src={`../../assets/banner/banner${i}.jpg`}></img>
+            <img src={`../../assets/banner/banner${i}.jpg`} alt=''></img>
          </SwiperSlide>
       )
    }

@@ -39,7 +39,6 @@ export default function ItemListContainer() {
       })
    }, [id]);
    
-   console.log(id)
    return (
       <>
          <h3 className="list">Our Products</h3>
